@@ -34,6 +34,11 @@ class MockRedisQueue(RedisQueue):
 
         return self.connected
 
+    def disconnect(self, **kwargs):
+        self.connected = False
+
+        return self.connected
+
     def clear(self):
         self._items = []
         self._item_lock = []

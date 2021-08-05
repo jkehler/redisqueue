@@ -43,6 +43,7 @@ mock_queue = MockRedisQueue('mock_queue', MockTask)
 
 
 def test_mock_queue_connection():
+    mock_queue.disconnect()
     assert mock_queue.connected is False
 
     with pytest.raises(QueueNotConnectedError):
